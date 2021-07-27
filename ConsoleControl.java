@@ -1,17 +1,16 @@
 import java.util.Scanner;
-/**
- * Main method to play the new Hangman game!
- * @author Zeynep Öztunç
- * @version 1 16.07.2021
- */
-public class ConsoleHangmanv2
+
+// ConsoleControl
+// David, 7/4/2013
+
+public class ConsoleControl
 {
-    public static void main( String[] args)
+	public static void controlFor( Hangman hangman)
 	{
-    	Scanner scan = new Scanner( System.in);
+		Scanner scan = new Scanner( System.in);
 
 		// variables
-		HangmanModel	hangman;
+
 		Scanner scanner = new Scanner( System.in );
         int triesLeft; //the number of tries left fot the user guess the word
         int gameState; //the state of the letter in the word 
@@ -30,7 +29,7 @@ public class ConsoleHangmanv2
 			hangman = new HangmanModel( new BasicSetup() );
 
             //adds a view to the hangmanmodel
-            hangman.addView(new ConsoleHangmanView());
+            //hangman.addView(new ConsoleHangmanView());
             System.out.println();
             //hangman.addView(new ConsoleHangmanView());
 
@@ -110,5 +109,5 @@ public class ConsoleHangmanv2
 
         scan.close();
 	}
-
-} // end of class ConsoleHangman
+  
+}

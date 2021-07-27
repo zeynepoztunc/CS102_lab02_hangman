@@ -18,6 +18,7 @@ public class Hangman{
     private int numberOfIncorrectTries;
     private int maxAllowedIncorrectTries;
 
+    //constructor
     public Hangman(IHangmanSetup setup) {
         this.setup = setup;
         this.initNewGame();	
@@ -76,7 +77,7 @@ public class Hangman{
      * @return whether the game is over or not
      */
     public boolean isGameOver() {
-        return (hasLost() || (knownSoFar.toString().equals(secretWord.toString())));
+        return (hasLost() || (knownSoFar.toString().equals(secretWord.toString().toLowerCase())));
     }
     
     /** Determines whether user has lost game or not
@@ -163,16 +164,16 @@ public class Hangman{
                 this.numberOfIncorrectTries = 0;
     }  
     private boolean isComplete() {
-                return !this.existsIn(this.knownSoFar, this.blankChar);
+        return !this.existsIn(this.knownSoFar, this.blankChar);
     }
             
-            private boolean existsIn(final StringBuffer s, final char c) {
-                for (int i = 0; i < s.length(); ++i) {
-                    if (Character.toUpperCase(s.charAt(i)) == Character.toUpperCase(c)) {
-                        return true;
-                    }
-                }
-                return false;
-            } 
+    private boolean existsIn(final StringBuffer s, final char c) {
+        for (int i = 0; i < s.length(); ++i) {
+            if (Character.toLowerCase(s.charAt(i)) == Character.toLowerCase(c)) {
+                    return true;
+            }
+        }
+        return false;
+    } 
 } 
 

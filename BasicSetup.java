@@ -4,7 +4,7 @@
 
 public class BasicSetup implements IHangmanSetup
 {
-	private static String[] words = { "Broken", "Magical", "I",
+	private static String[] words = { "Broken", "Magical",
 									"JRobo is the best", "amazing",
 									"cool", "David", "Incredible" };
 
